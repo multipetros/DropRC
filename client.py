@@ -15,7 +15,7 @@ import datetime
 from ini import ini
 
 def main():
-    print "DropRC Client 1.0 Copyright (c) 2013-2016, Petros Kyladitis <www.multipetros.gr>\n"
+    print "DropRC Client 1.0 Copyright (c) 2013-2016, Petros Kyladitis <www.multipetros.gr>"
     options = ini("client")
     commands_file = options["commands_file"]
     results_file = options["results_file"]
@@ -59,8 +59,9 @@ def main():
                 fresults.close()
                 print lines
                 os.remove(results_file)
-            print "Waiting for server response (next check at " + str(addSecs(delay)) + ")..."
-            time.sleep(delay)
+            else:
+                print "Waiting for server response (next check at " + str(addSecs(delay)) + ")..."
+                time.sleep(delay)
 
 def addSecs(secs):
     now = datetime.datetime.now().time()
